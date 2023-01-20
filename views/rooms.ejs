@@ -1,0 +1,30 @@
+<%-include('header')-%> 
+<section class="header">
+    <nav>
+        <a href=""> <img src="/assets/snowcopy.png"></a>
+        <div class="nav-links" id = "navLinks">
+            <i class="fa fa-times" onclick= "hideMenu()"></i>
+            <ul>
+                <li><a href="/route/rooms">Rooms</a></li>
+                <li><a href="/route/About">About</a></li>
+                <li><a href="/route/blog">Blog</a></li>
+                <li><a href="/route/profile">Profile</a></li>
+            </ul>
+        </div>
+        <i class="fa fa-bars" onclick= "showMenu()"></i>
+    </nav>  
+</section>
+<section class="roomheader">  
+    <div class="text-box">
+        <h1>Choose a room below!</h1>
+    </div>
+    <div class="row">
+        <div class="roomstyle"><a href="/pickcodename?room=soccer" class="fixer">Soccer Room</a></div>
+        <div class="roomstyle"><a href="/pickcodename?room=basketball" class="fixer">Basketball Room</a></div>
+        <div class="roomstyle">Fun Room</div>
+        <div class="roomstyle">Chocolate Room</div>
+        <div class="roomstyle">Busy Room</div>
+        <div class="roomstyle">Relaxing Room</div>
+        <div class="roomstyle">Thinking Room</div>
+</section>
+<%-include('footer')-%> 

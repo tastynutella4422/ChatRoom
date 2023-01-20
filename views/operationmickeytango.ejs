@@ -1,0 +1,59 @@
+<%-include('header')-%> 
+<section class="header">
+    <nav>
+        <a href=""> <img src="/assets/snowcopy.png"></a>
+        <div class="nav-links" id = "navLinks">
+            <i class="fa fa-times" onclick= "hideMenu()"></i>
+            <ul>
+                <li><a href="/route/rooms">Rooms</a></li>
+                <li><a href="/route/About">About</a></li>
+                <li><a href="/route/blog">Blog</a></li>
+                <li><a href="/route/profile">Profile</a></li>
+            </ul>
+        </div>
+        <i class="fa fa-bars" onclick= "showMenu()"></i>
+    </nav>  
+</section>
+<section class="roomheader">  
+    <div class="text-box">
+        <h1>Choose a room below!</h1>
+    </div>
+    <div class="row">
+        <div class="roomstyle">
+            <div id="btn"></div>
+           <button type="button" id="clicker" class="echo" onclick="login('dropdown', 'clicker')">Soccer Room</button>
+           <div id="dropdown" class="dropit">
+           <form  action="/joinroom" id= "enteruser" class="input-group">
+            <input type="text" name ="username" class="input-field" placeholder="Enter Anonymous Username" required>
+            <button type="submit" name="room" value="soccer" class="submit-btn">Join</button>
+            </form>
+            </div>
+        </div>
+        <div class="roomstyle">
+            <div id="btn"></div>
+           <button type="button" id="clickerr" class="echo" onclick="login('dropdown1', 'clickerr')">Basketball Room</button>
+           <div id="dropdown1" class="dropit">
+           <form  action="/joinroom" id= "enteruser" class="input-group">
+            <input type="text" name ="username" class="input-field" placeholder="Enter Anonymous Username" required>
+            <button type="submit" name="room" value="basketball" class="submit-btn">Join</button>
+            </form>
+            </div>
+        </div>
+        <div class="roomstyle">Fun Room</div>
+        <div class="roomstyle">Chocolate Room</div>
+        <div class="roomstyle">Busy Room</div>
+        <div class="roomstyle">Relaxing Room</div>
+        <div class="roomstyle">Thinking Room</div>
+</section>
+<script>
+    window.onload = () => {
+    document.getElementById('clicker').onclick = function() {login('dropdown','clicker')}
+    document.getElementById('clickerr').onclick = function() {login('dropdown1','clickerr')}
+
+    function login(idname, showname) {
+        document.getElementById(idname).classList.toggle("show");
+        document.getElementById(showname).classList.toggle("hide");
+    }
+}
+</script>
+<%-include('footer')-%> 

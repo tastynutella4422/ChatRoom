@@ -1,0 +1,24 @@
+<%-include('header')-%> 
+    <!-- <div class="text-center center-div mt-5" id="login">
+       <div class="container w-25 py-5 mt-5">
+           <h3>Welcome to Express Dashboard </h3>
+           <h5><%= locals.user ? user:"User" %> </h5>
+           <a href="/">Logout</a> 
+    </div>  -->
+    <nav>
+        <a href=""> <img src="/assets/snowcopy.png"></a>
+        <div class="nav-links" id = "navLinks">
+            <i class="fa fa-times" onclick= "hideMenu()"></i>
+            <ul>
+                <li><a href="/route/rooms">Rooms</a></li>
+                <li><a href="/route/About">About</a></li>
+                <li><a href="/route/blog">Blog</a></li>
+                <li><a href="/route/profile">Profile</a></li>
+            </ul>
+        </div>
+        <i class="fa fa-bars" onclick= "showMenu()"></i>
+    </nav>  
+    <div class="text-boxes">
+        <h1>Welcome to the Future</h1>
+    </div>
+<%-include('footer')-%> 

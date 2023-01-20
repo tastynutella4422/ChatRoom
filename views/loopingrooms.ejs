@@ -1,0 +1,55 @@
+<%-include('header')-%> 
+<section class="header">
+    <nav>
+        <a href=""> <img src="/assets/snowcopy.png"></a>
+        <div class="nav-links" id = "navLinks">
+            <i class="fa fa-times" onclick= "hideMenu()"></i>
+            <ul>
+                <li><a href="/route/rooms">Rooms</a></li>
+                <li><a href="/route/About">About</a></li>
+                <li><a href="/route/blog">Blog</a></li>
+                <li><a href="/route/profile">Profile</a></li>
+            </ul>
+        </div>
+        <i class="fa fa-bars" onclick= "showMenu()"></i>
+    </nav>  
+</section>
+<section class="roomheader">  
+    <div class="text-box">
+        <h1>Choose a room below!</h1>
+    </div>
+    <main>
+    </main>
+</section>
+<script>
+    const main = document.querySelector("main");
+
+    listofRooms = ['Soccer', 'Basketball', 'Tennis']
+    let htmlString = '<div class="row">';
+    for(let i = 0; i < listofRooms.length; i++) {
+        htmlString += `<div class="roomstyle">
+            <div id="btn"></div>
+           <button type="button" id="clicker${i}" class="echo" onclick="login('dropdown${i}', 'clicker${i}')">${listofRooms[i]} Room</button>
+           <div id="dropdown${i}" class="dropit">
+           <form  action="/joinroom" id= "enteruser" class="input-group">
+            <input type="text" name ="username" class="input-field" placeholder="Enter Anonymous Username" required>
+            <button type="submit" name="room" value="soccer" class="submit-btn">Join</button>
+            </form>
+            </div>
+        </div>`
+    }
+    htmlString+= `</div>`
+    main.innerHTML = htmlString;
+</script>
+<script>
+    window.onload = () => {
+    document.getElementById('clicker0').onclick = function() {login('dropdown0','clicker0')}
+    document.getElementById('clicker1').onclick = function() {login('dropdown1','clicker1')}
+
+    function login(idname, showname) {
+        document.getElementById(idname).classList.toggle("show");
+        document.getElementById(showname).classList.toggle("hide");
+    }
+}
+</script>
+<%-include('footer')-%> 
